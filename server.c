@@ -12,7 +12,7 @@
 #include <fcntl.h>
 
 
-char webpage[]=
+/*char webpage[]=
 "200 OK\r\n"
 "Content-Type: text/html; charset=UTF-8\r\n\r\n"
 
@@ -22,7 +22,18 @@ char webpage1[]=
 
 char webpage2[]=
 "200 OK\r\n"
-"Content-Type: text/html; charset=UTF-8\r\n\r\n"
+"Content-Type: text/html; charset=UTF-8\r\n\r\n"*/
+
+void header (int handler, int status){
+	char header [BUF_SIZE] = {0};
+	if (status == 0) {
+		sprintf(header, "200 OK\r\n\r\n")
+	} 
+	else {
+		sprintf(header, "404 Not Found\r\n\r\n");
+	}
+	send (handler, header, strlen(header), 0);
+}
 
 
 //main function
