@@ -42,7 +42,7 @@ int main (int argc, char *argv[]){
 	struct sockaddr_in server_addr, client_addr;	
 	socklen_t sin_len = sizeof(client_addr);
 	//file descriptor
-	int fd_server, fd_client; 
+	int fd_server, fd_client, SERV_TCP_PORT; 
 	char buf[2048], msgrcv[500];
 	int fdopen;
 	int on = 1;
