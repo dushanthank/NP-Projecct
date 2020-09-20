@@ -46,6 +46,7 @@ int main (int argc, char *argv[]){
 	char buf[2048];
 	int fdopen;
 	int on = 1;
+	const char *ptr;
 	
 	fd_server = socket(AF_INET, SOCK_STREAM, 0);
 
