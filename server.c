@@ -25,7 +25,7 @@ char webpage2[]=
 "Content-Type: text/html; charset=UTF-8\r\n\r\n"*/
 
 void header (int handler, int status){
-	char header [BUF_SIZE] = {0};
+	char header [] = {0};
 	if (status == 0) {
 		sprintf(header, "200 OK\r\n\r\n");
 	} 
@@ -115,7 +115,7 @@ int main (int argc, char *argv[]){
 			}
 			
 			else 
-			write (fd_client, header, sizeof(webpage) -1 );
+			write (fd_client, header, sizeof(header) -1 );
 			
 			close (fd_client);
 			printf("closing.....\n");
