@@ -72,7 +72,7 @@ int main (int argc, char *argv[]){
 		exit(1);
 	}
 	
-	printf("connection from %s, port %d\n", ptr, ntohs(cliaddr.sin_port));
+	printf("connection from %s, port %d\n", ptr, ntohs(client_addr.sin_port));
 	
 	while (1){
 		fd_client = accept(fd_server, (struct sockaddr *) &client_addr, &sin_len);
