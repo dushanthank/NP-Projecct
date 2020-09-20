@@ -43,7 +43,7 @@ int main (int argc, char *argv[]){
 	socklen_t sin_len = sizeof(client_addr);
 	//file descriptor
 	int fd_server, fd_client; 
-	char buf[2048];
+	char buf[2048], msgrcv[500];
 	int fdopen;
 	int on = 1;
 	const char *ptr;
@@ -55,7 +55,8 @@ int main (int argc, char *argv[]){
 			exit(1);
 		}
 	setsockopt(fd_server, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(int));
-		
+	bzero(&server_addr, sizeof(server_addr));
+	bzero(msgrcv, sizeof(msgrcv));	
 	server_addr.sin_family = AF_INET;
 	server_addr.sin_addr.s_addr = INADDR_ANY;
 	server_addr.sin_port = htons(SERV_TCP_PORT);
