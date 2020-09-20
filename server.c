@@ -27,7 +27,7 @@ char webpage2[]=
 void header (int handler, int status){
 	char header [BUF_SIZE] = {0};
 	if (status == 0) {
-		sprintf(header, "200 OK\r\n\r\n")
+		sprintf(header, "200 OK\r\n\r\n");
 	} 
 	else {
 		sprintf(header, "404 Not Found\r\n\r\n");
@@ -115,7 +115,7 @@ int main (int argc, char *argv[]){
 			}
 			
 			else 
-			write (fd_client, webpage, sizeof(webpage) -1 );
+			write (fd_client, header, sizeof(webpage) -1 );
 			
 			close (fd_client);
 			printf("closing.....\n");
