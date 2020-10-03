@@ -25,7 +25,6 @@ int main (int argc, char *argv){
 	socklen_t sin_len = sizeof(client_addr);
 	int fd_server, fd_client;
 	char buf[2048];
-	int fdimg;
 	int on = 1;
 	
 	fd_server = socket (AF_INET, SOCK_STREAM, 0);
